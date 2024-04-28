@@ -1,0 +1,222 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    zoom: 0.8;
+}
+
+.threetanks {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.redtank,.bluetank,.greentank{
+    border: 10px solid black;
+    border-top: 0;
+}
+
+.redtank {
+    height: 30vh;
+    width: 40vh;
+    background-color: white;
+}
+
+.redwater {
+    position: relative;
+    animation: redpour 20s linear forwards;
+    animation-play-state: paused;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    height: 30vh; 
+    width: 40vh; 
+    background-color: red; 
+}
+
+.greenwater {
+    position: relative;
+    animation: greenpour 20s linear forwards;
+    animation-play-state: paused;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    height: 30vh; 
+    width: 40vh; 
+    background-color: #00FF00; 
+}
+
+.bluewater {
+    position: relative;
+    animation: bluepour 20s linear forwards;
+    animation-play-state: paused;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    height: 30vh; 
+    width: 40vh; 
+    background-color: blue; 
+}
+
+
+
+svg {
+    margin-top: 186px;
+    height: 8vh;
+    width: 8vh;
+    
+  
+}
+
+.greentank {
+    margin-left: 100px;
+    height: 30vh;
+    width: 40vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.bluetank {
+    max-width: 40vh;
+    max-height: 30vh;
+    margin-left: 100px;
+    height: 30vh;
+    width: 40vh;
+    background-color: white;
+}
+
+
+.redflow{
+    position: absolute;
+    height: 30vh; 
+    width: 1.5vh; 
+    background-color: red; 
+    left: 88.3vh;
+    /* top: 80vh; */
+    margin-top: 66vh;
+    animation: waterflow 0.5s linear forwards;
+    animation-play-state: paused; 
+    
+}
+
+
+.greenflow{
+    position: absolute;
+    height: 30vh; 
+    width: 1.6vh; 
+    background-color: green; 
+    left: 152vh;
+    /* top: 80vh; */
+    margin-top: 66vh;
+    animation: waterflow 0.5s linear forwards;
+    animation-play-state: paused; 
+    
+}
+
+
+.blueflow{
+    position: absolute;
+    height: 30vh; 
+    width: 1.6vh; 
+    background-color:blue;
+    left: 215.8vh;
+    /* top: 80vh; */
+    margin-top: 66vh;
+    animation: waterflow 0.5s linear forwards;
+    animation-play-state: paused; 
+    
+}
+
+.mixwater {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    margin-top: 200px;
+    margin-left: 500px;
+    align-items: center;
+    width: 160vh; 
+    height: 200px; 
+    background-color: white;
+    border: 10px solid black;
+    border-top: 0;
+    z-index: -1; 
+}
+
+
+
+.mixwater::before {
+    position: absolute;
+    content: '';
+    width: 200%;
+    height: 200%;
+    background-color: #ececec;
+    top: -150%;
+    left: -50%;
+    border-radius: 40%;
+    animation: wave 1s infinite linear;
+}
+
+
+.mixwater::after {
+    position: absolute;
+    content: '';
+    width: 204%;
+    height: 204%;
+    background-color: #ececec80;
+    top: -150%;
+    left: -52%;
+    border-radius: 40%;
+    animation: wave 1s infinite linear;
+    animation-delay: 0.1s;
+ 
+}
+
+
+
+
+
+@keyframes wave {
+    0% {
+        clip-path: polygon(0 94%, 13% 96%, 25% 94%, 38% 90%, 46% 94%, 56% 92%, 66% 96%, 78% 94%, 93% 95%, 100% 100%, 100% 0, 0 0);}
+    100% {
+        clip-path: polygon(0 90%, 8% 100%, 19% 91%, 27% 100%, 40% 90%, 51% 100%, 61% 92%, 73% 100%, 87% 93%, 100% 100%, 100% 0, 0 0);   }
+}
+ @keyframes waterflow{
+
+from {height: 0;top: 0; }
+to {height:27vh; top: 0; }
+
+ }
+
+@keyframes redpour {
+    from {
+        height: 100%;
+        top: 0;
+    }
+    to {
+        height: 0;
+        top: 100%;
+    }
+    
+}
+
+@keyframes greenpour {
+    from {height: 100%; top: 0; }
+    to {height: 0; top: 100%; }
+}
+
+@keyframes bluepour {
+    from {height: 100%; top: 0;}
+    to {height: 0; top: 100%; }
+}
